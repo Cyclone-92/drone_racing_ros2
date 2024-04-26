@@ -35,7 +35,7 @@
     source install/setup.bash
     export GAZEBO_MODEL_PATH=${PWD}/install/tello_gazebo/share/tello_gazebo/models
     source /usr/share/gazebo/setup.sh
-    ros2 launch tello_gazebo simple_launch.py
+    ros2 launch tello_gazebo team_05_launch.py
     
 You will see a single drone in a blank world.
 You can control the drone using the joystick.
