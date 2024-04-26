@@ -12,7 +12,10 @@ def generate_launch_description():
     ns = 'drone1'
     world_path = os.path.join(get_package_share_directory('tello_gazebo'), 'worlds', 'final.world')
     urdf_path = os.path.join(get_package_share_directory('tello_description'), 'urdf', 'tello_1.urdf')
-    Exec_path = "/home/cyclone_20/drone_racing_ros2_ws/src/drone_racing_ros2/tello_ros/tello_gazebo/src/drone_controller.py"
+    Exec_path = os.path.join(get_package_share_directory('tello_gazebo'))
+    Exec_path = os.path.abspath(os.path.join(Exec_path, "../../../..","src/","drone_racing_ros2/","tello_ros/","tello_gazebo/","src/drone_controller.py"))
+    
+    print(Exec_path)
     return LaunchDescription([
         # Launch Gazebo, loading tello.world
         ExecuteProcess(cmd=[
