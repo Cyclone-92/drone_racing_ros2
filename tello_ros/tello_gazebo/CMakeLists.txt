@@ -82,6 +82,7 @@ install(
 ## Install Python scripts
 install(
   PROGRAMS src/inject_entity.py
+  PROGRAMS src/drone_controller.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

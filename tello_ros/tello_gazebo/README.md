@@ -1,22 +1,23 @@
 ## Running a Tello simulation in [Gazebo](http://gazebosim.org/)
 
 `tello_gazebo` consists of several components:
-* `TelloPlugin` simulates a drone, handling takeoff, landing and very simple flight dynamics
-* `markers` contains Gazebo models for fiducial markers
-* `fiducial.world` is a simple world with a bunch of fiducial markers
-* `inject_entity.py` is a script that will read an URDF (ROS) or SDF (Gazebo) file and spawn a model in a running instance of Gazebo
-* the built-in camera plugin is used to emulate the Gazebo forward-facing camera
+
+- `TelloPlugin` simulates a drone, handling takeoff, landing and very simple flight dynamics
+- `markers` contains Gazebo models for fiducial markers
+- `fiducial.world` is a simple world with a bunch of fiducial markers
+- `inject_entity.py` is a script that will read an URDF (ROS) or SDF (Gazebo) file and spawn a model in a running instance of Gazebo
+- the built-in camera plugin is used to emulate the Gazebo forward-facing camera
 
 As of this writing ROS2 Eloquent + Gazebo v9 integration is still developing. YMMV.
 
 #### Python
 
-Add transformations.py v2018.9.5 to your Python environment.
+    Add transformations.py v2018.9.5 to your Python environment.
 
 #### Install Gazebo v9
 
     sudo apt install gazebo9 libgazebo9 libgazebo9-dev
-    
+
 Run `gazebo` on the command line, fix any problems before continuing.
 
 #### Additional ROS packages
@@ -27,10 +28,10 @@ Run `gazebo` on the command line, fix any problems before continuing.
 
     cd ~/tello_ros_ws
     source install/setup.bash
-    export GAZEBO_MODEL_PATH=${PWD}/install/tello_gazebo/share/tello_gazebo/models
+    export GAZEBO_MODEL_PATH=${PWD}/install/tello_gazebo/share/tello_gazebo/models -y
     source /usr/share/gazebo/setup.sh
     ros2 launch tello_gazebo simple_launch.py
-    
+
 You will see a single drone in a blank world.
 You can control the drone using the joystick.
 
@@ -38,12 +39,12 @@ If you run into the **No namespace found** error re-set `GAZEBO_MODEL_PATH`:
 
     export GAZEBO_MODEL_PATH=${PWD}/install/tello_gazebo/share/tello_gazebo/models
     source /usr/share/gazebo/setup.sh
-    
-####  Integrate with `fiducial_vlam`
+
+#### Integrate with `fiducial_vlam`
 
     cd ~/tello_ros_ws/src
     git clone https://github.com/ptrmu/fiducial_vlam.git
-    cd ..      
+    cd ..
     colcon build --event-handlers console_direct+
     source install/local_setup.bash
     ros2 launch tello_gazebo vlam_launch.py
