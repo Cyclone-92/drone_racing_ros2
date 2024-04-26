@@ -1,4 +1,5 @@
 # <div align="center">`drone_racing_ros2`</div>
+# <div align="center">`University of Turku: Aerial Robotics Group 5 - Common Project (DTEK2084)`</div>
 ## Running a Tello simulation in [Gazebo](http://gazebosim.org/)
 
 `tello_gazebo` consists of several components:
@@ -53,3 +54,11 @@ shape == > circle : 0 square :1
 color == > red : 0    green  :1 orange : 2 
 
     self.control_seqence = [(1,0),(0,1),(1,2),(1,1),(1,1),(1,1),(1,1),(1,1),(1,1),(1,1),(1,1),(1,1),(1,1),(0,3)]
+    
+## Authors:
+
+     - Prashan Herath [prashan.r.herathmudiyanselage@utu.fi]
+     - Julian C. Paez P. [julian.c.paezpineros@utu.fi]
+     - Michalis Iona [michalis.l.iona@utu.fi]
+     
+University of Turku TIERS lab group.
