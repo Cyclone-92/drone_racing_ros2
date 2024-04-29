@@ -24,7 +24,7 @@
 #### Build this package
     mkdir -p ~/drone_racing_ros2_ws/src
     cd ~/drone_racing_ros2_ws/src
-    git clone https://github.com/TIERS/drone_racing_ros2.git
+    https://github.com/Cyclone-92/drone_racing_ros2.git
     cd ..
     source /opt/ros/galactic/setup.bash
     colcon build
